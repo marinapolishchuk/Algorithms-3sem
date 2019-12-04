@@ -13,7 +13,7 @@
 #include <vector>
 
 //Подвоюємо перший текстовий рядок і застосовуємо алгоритм КМП, який працює лінійно
-int KMP_search(const std::string& first, const std::string& second) {
+int circularShiftCheck(const std::string& first, const std::string& second) {
 
     if ((first.size() == 0 && second.size() == 0) || (first.size() != second.size())) {
         return -1;
@@ -22,17 +22,17 @@ int KMP_search(const std::string& first, const std::string& second) {
     std::string c = first + first;
     
     //рахуємо префікс функцію
-    std::vector<int> help_arr;
-    help_arr.resize(second.size());
-    help_arr[0] = 0;
+    std::vector<int> prefix_func;
+    prefix_func.resize(second.size());
+    prefix_func[0] = 0;
     
-    for (int i = 1; i < help_arr.size(); ++i) {
+    for (int i = 1; i < prefix_func.size(); ++i) {
         
-        int pos = help_arr[i - 1];
+        int pos = prefix_func[i - 1];
         while (pos > 0 && second[pos] != second[i]) {
-            pos = help_arr[pos - 1];
+            pos = prefix_func[pos - 1];
         }
-        help_arr[i] = pos + (second[pos] == second[i] ? 1 : 0);
+        prefix_func[i] = pos + (second[pos] == second[i] ? 1 : 0);
     }
     
     int pos = 0;
@@ -40,7 +40,7 @@ int KMP_search(const std::string& first, const std::string& second) {
     for (int i = 0; i < c.size(); ++i) {
         
         while (pos > 0 && (pos >= second.size() || second[pos] != c[i])) {
-            pos = help_arr[pos - 1];
+            pos = prefix_func[pos - 1];
         }
         if (c[i] == second[pos]) {
             pos++;
@@ -59,13 +59,13 @@ int main() {
     std::string second = "aabaabaaa"; //010123452
     
     
-    if (KMP_search(first, second) != -1) {
+    if (circularShiftCheck(first, second) != -1) {
         
-        std::cout << "YES!" << std::endl;
+        std::cout << "Yes" << std::endl;
         
     } else {
         
-        std::cout << "NO!" << std::endl;
+        std::cout << "No" << std::endl;
     }
     
     return 0;
