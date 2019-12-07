@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9CD40AE923985C820035EA97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CD40AE823985C820035EA97 /* main.cpp */; };
+		9CD40AF123985D830035EA97 /* Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CD40AEF23985D830035EA97 /* Algorithms.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		9CD40AE523985C810035EA97 /* lab8 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab8; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD40AE823985C820035EA97 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9CD40AEF23985D830035EA97 /* Algorithms.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Algorithms.cpp; sourceTree = "<group>"; };
+		9CD40AF023985D830035EA97 /* Algorithms.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Algorithms.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				9CD40AE823985C820035EA97 /* main.cpp */,
+				9CD40AEF23985D830035EA97 /* Algorithms.cpp */,
+				9CD40AF023985D830035EA97 /* Algorithms.hpp */,
 			);
 			path = lab8;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD40AE923985C820035EA97 /* main.cpp in Sources */,
+				9CD40AF123985D830035EA97 /* Algorithms.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
